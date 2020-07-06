@@ -67,23 +67,6 @@ You must address the following questions and tasks in your exploratory analysis.
 1. Have total emissions from PM2.5 decreased in the United States from 1999 to 2008? Using the base plotting system, make a plot showing the total PM2.5 emission from all sources for each of the years 1999, 2002, 2005, and 2008.
 
 ```
-# Downloading the compressed file and extracting it to the source location
-
-dataFile <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2FNEI_data.zip"
-
-download.file(dataFile, destfile = "./Data for Peer Assessment.zip")
-
-unzip(zipfile = "./Data for Peer Assessment.zip",
-      exdir = "./Data for Peer Assessment")
-
-# Reading the file data
-NEI <- readRDS("../Data for Peer Assessment/summarySCC_PM25.rds")
-SCC <- readRDS("../Data for Peer Assessment/Source_Classification_Code.rds")
-
-# We first need to find the aggregate total PM2.5 emission from all sources for 
-# each of the years 1999, 2002, 2005, and 2008.
-aggTotalEmissions <- aggregate(Emissions ~ year,NEI, sum)
-
 # Have total emissions from PM2.5 decreased in the United States 
 # from 1999 to 2008? Using the base plotting system, make a plot 
 # showing the total PM2.5 emission from all sources for each of 
@@ -105,17 +88,6 @@ dev.off()
 2. Have total emissions from PM2.5 decreased in the Baltimore City, Maryland (fips == "24510") from 1999 to 2008? Use the base plotting system to make a plot answering this question.
 
 ```
-# Reading the file data
-NEI <- readRDS("../Data for Peer Assessment/summarySCC_PM25.rds")
-SCC <- readRDS("../Data for Peer Assessment/Source_Classification_Code.rds")
-
-# Subset NEI data by Baltimore's fip.
-subsetBaltimoreNEI <- NEI[NEI$fips=="24510",]
-
-# Aggregate Baltimore emissions
-aggBaltimoreEmissions <- aggregate(Emissions ~ year,
-                                   subsetBaltimoreNEI, sum)
-
 # plotting the graph
 png("plot2.png",width=480,height=480,units="px",bg="transparent")
 
@@ -132,20 +104,6 @@ dev.off()
 3. Of the four types of sources indicated by the type (point, nonpoint, onroad, nonroad) variable, which of these four sources have seen decreases in emissions from 1999-2008 for Baltimore City? Which have seen increases in emissions from 1999-2008? Use the ggplot2 plotting system to make a plot answer this question.
 
 ```
-# Reading the file data
-NEI <- readRDS("../Data for Peer Assessment/summarySCC_PM25.rds")
-SCC <- readRDS("../Data for Peer Assessment/Source_Classification_Code.rds")
-
-# loading the ggplot2 library
-library(ggplot2)
-
-# Subset NEI data
-subsetNEIYearType <- NEI[NEI$fips=="24510",]
-
-# Aggregate emissions based on Year and Type
-aggEmissionsYearType <- aggregate(Emissions ~ year,
-                                   subsetNEIYearType, sum)
-
 # plotting the graph
 png("plot3.png",width=480,height=480,units="px",bg="transparent")
 
@@ -164,6 +122,21 @@ dev.off()
 ![Plot3.png](https://github.com/VigneshIyer11888/Exploratory-Data-Analysis-Week-4---Project/blob/master/plot3.png)
 
 4. Across the United States, how have emissions from coal combustion-related sources changed from 1999-2008?
+
+```
+png("plot4.png",width=480,height=480,units="px",bg="transparent")
+
+ggp <- ggplot(combustionNEI,aes(factor(year),Emissions/10^5)) +
+  geom_bar(stat="identity",fill="#FF3609",width=0.75) +
+  theme_bw() +  guides(fill=FALSE) +
+  labs(x="year", y=expression("Total PM"[2.5]*" Emission (10^5 Tons)")) + 
+  labs(title=expression("PM"[2.5]*" Coal Combustion Source Emissions Across US from 1999-2008"))
+
+print(ggp)
+
+dev.off()
+```
+![Plot4.png](https://github.com/VigneshIyer11888/Exploratory-Data-Analysis-Week-4---Project/blob/master/plot4.png)
 
 5. How have emissions from motor vehicle sources changed from 1999-2008 in Baltimore City?
 
