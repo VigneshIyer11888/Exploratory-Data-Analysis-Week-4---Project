@@ -156,6 +156,7 @@ dev.off()
 6. Compare emissions from motor vehicle sources in Baltimore City with emissions from motor vehicle sources in Los Angeles County, California (fips == "06037"). Which city has seen greater changes over time in motor vehicle emissions?
 
 ```
+# plotting the graph
 png("plot6.png",width=480,height=480,units="px",bg="transparent")
 
 ggp <- ggplot(bothNEI, aes(x=factor(year), y=Emissions, fill=city)) +
