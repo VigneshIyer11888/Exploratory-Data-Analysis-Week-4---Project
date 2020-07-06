@@ -7,7 +7,7 @@ download.file(dataFile, destfile = "./Data for Peer Assessment.zip")
 unzip(zipfile = "./Data for Peer Assessment.zip",
       exdir = "./Data for Peer Assessment")
 
-# Loading the file data
+# Reading the file data
 NEI <- readRDS("./Data for Peer Assessment/summarySCC_PM25.rds")
 SCC <- readRDS("./Data for Peer Assessment/Source_Classification_Code.rds")
 
