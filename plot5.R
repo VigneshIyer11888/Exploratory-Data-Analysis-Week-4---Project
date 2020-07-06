@@ -13,6 +13,7 @@ vehiclesNEI <- NEI[NEI$SCC %in% vehiclesSCC,]
 # Subset the vehicles NEI data to Baltimore's fip
 baltimoreVehiclesNEI <- vehiclesNEI[vehiclesNEI$fips=="24510",]
 
+# plotting the graph
 png("plot5.png",width=480,height=480,units="px",bg="transparent")
 
 ggp <- ggplot(baltimoreVehiclesNEI,aes(factor(year),Emissions)) +

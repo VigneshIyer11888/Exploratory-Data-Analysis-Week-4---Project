@@ -136,5 +136,21 @@ dev.off()
 
 5. How have emissions from motor vehicle sources changed from 1999-2008 in Baltimore City?
 
+```
+# plotting the graph
+png("plot5.png",width=480,height=480,units="px",bg="transparent")
+
+ggp <- ggplot(baltimoreVehiclesNEI,aes(factor(year),Emissions)) +
+  geom_bar(stat="identity",fill="#FF8507",width=0.75) +
+  theme_bw() +  guides(fill=FALSE) +
+  labs(x="year", y=expression("Total PM"[2.5]*" Emission (10^5 Tons)")) + 
+  labs(title=expression("PM"[2.5]*" Motor Vehicle Source Emissions in Baltimore from 1999-2008"))
+
+print(ggp)
+
+dev.off()
+
+```
+![Plot5.png](https://github.com/VigneshIyer11888/Exploratory-Data-Analysis-Week-4---Project/blob/master/plot5.png)
 6. Compare emissions from motor vehicle sources in Baltimore City with emissions from motor vehicle sources in Los Angeles County, California (fips == "06037"). Which city has seen greater changes over time in motor vehicle emissions?
 
