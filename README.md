@@ -47,9 +47,9 @@ The first few rows are as follows:
 # 24 09001 10200602  PM25-PRI     1.490 POINT 1999
 
 ```
-. \color{red}{\verb|flips|}fips: A five-digit number (represented as a string) indicating the U.S. county
-. \color{red}{\verb|SCC|}SCC: The name of the source as indicated by a digit string (see source code classification table)
-. \color{red}{\verb|Pollutant|}Pollutant: A string indicating the pollutant
-. \color{red}{\verb|Emissions|}Emissions: Amount of PM2.5 emitted, in tons
-. \color{red}{\verb|type|}type: The type of source (point, non-point, on-road, or non-road)
-. \color{red}{\verb|year|}year: The year of emissions recorded
+. fips: A five-digit number (represented as a string) indicating the U.S. county
+. SCC: The name of the source as indicated by a digit string (see source code classification table)
+. Pollutant: A string indicating the pollutant
+. Emissions: Amount of PM2.5 emitted, in tons
+. type: The type of source (point, non-point, on-road, or non-road)
+. year: The year of emissions recorded
