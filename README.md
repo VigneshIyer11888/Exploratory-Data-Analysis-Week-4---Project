@@ -83,6 +83,10 @@ dev.off()
 2. Have total emissions from PM2.5 decreased in the Baltimore City, Maryland (fips == "24510") from 1999 to 2008? Use the base plotting system to make a plot answering this question.
 
 ```
+# Reading the file data
+NEI <- readRDS("../Data for Peer Assessment/summarySCC_PM25.rds")
+SCC <- readRDS("../Data for Peer Assessment/Source_Classification_Code.rds")
+
 # Subset NEI data by Baltimore's fip.
 subsetBaltimoreNEI <- NEI[NEI$fips=="24510",]
 
