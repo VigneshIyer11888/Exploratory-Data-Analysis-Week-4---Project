@@ -28,14 +28,7 @@ download.file(dataFile, destfile = "./Data for Peer Assessment.zip")
 unzip(zipfile = "./Data for Peer Assessment.zip",
       exdir = "./Data for Peer Assessment")
 ```
-Then we read the data from the file
 
-```
-# Reading the file data
-NEI <- readRDS("./Data for Peer Assessment/summarySCC_PM25.rds")
-SCC <- readRDS("./Data for Peer Assessment/Source_Classification_Code.rds")
-
-```
 The first few rows are as follows:
 ```
 # fips      SCC Pollutant Emissions  type year
@@ -53,3 +46,16 @@ The first few rows are as follows:
 * Emissions: Amount of PM2.5 emitted, in tons
 * type: The type of source (point, non-point, on-road, or non-road)
 * year: The year of emissions recorded
+
+Source Classification Code Table (Source_Classification_Code.rds): This table provides a mapping from the SCC digit strings in the Emissions table to the actual name of the PM2.5 source. The sources are categorized in a few different ways from more general to more specific and you may choose to explore whatever categories you think are most useful. For example, source "10100101" is known as "Ext Comb /Electric Gen /Anthracite Coal /Pulverized Coal".
+
+You can read each of the two files using the readRDS() function in R. 
+
+For example, reading in each file can be done with the following code:
+
+```
+# Reading the file data
+NEI <- readRDS("./Data for Peer Assessment/summarySCC_PM25.rds")
+SCC <- readRDS("./Data for Peer Assessment/Source_Classification_Code.rds")
+
+```
