@@ -77,8 +77,8 @@ unzip(zipfile = "./Data for Peer Assessment.zip",
       exdir = "./Data for Peer Assessment")
 
 # Reading the file data
-NEI <- readRDS("./Data for Peer Assessment/summarySCC_PM25.rds")
-SCC <- readRDS("./Data for Peer Assessment/Source_Classification_Code.rds")
+NEI <- readRDS("../Data for Peer Assessment/summarySCC_PM25.rds")
+SCC <- readRDS("../Data for Peer Assessment/Source_Classification_Code.rds")
 
 # We first need to find the aggregate total PM2.5 emission from all sources for 
 # each of the years 1999, 2002, 2005, and 2008.
