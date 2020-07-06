@@ -16,12 +16,10 @@ aggBaltimoreEmissions <- aggregate(Emissions ~ year,
 # plotting the graph
 png("plot2.png",width=480,height=480,units="px",bg="transparent")
 
-barplot(
-  aggBaltimoreEmissions$Emissions,
-  names.arg=aggBaltimoreEmissions$year,
-  xlab="Year",
-  ylab="PM2.5 Emissions (Tons)",
-  main="Total PM2.5 Emissions From all Baltimore City Sources"
-)
+barplot(height=aggBaltimoreEmissions$Emissions,
+        names.arg=aggBaltimoreEmissions$year,
+        xlab="years",
+        ylab=expression('total PM'[2.5]*' emission'),
+        main=expression('Total PM'[2.5]*' in the Baltimore City, MD emissions at various years'))
 
 dev.off()
