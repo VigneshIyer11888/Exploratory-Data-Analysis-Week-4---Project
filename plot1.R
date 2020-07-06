@@ -28,3 +28,4 @@ barplot(height=aggTotalEmissions$Emissions,
         ylab=expression('total PM'[2.5]*' emission'),
         main=expression('Total PM'[2.5]*' emissions at various years')
         )
+dev.off()
