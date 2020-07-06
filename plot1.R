@@ -20,12 +20,11 @@ aggTotalEmissions <- aggregate(Emissions ~ year,NEI, sum)
 # showing the total PM2.5 emission from all sources for each of 
 # the years 1999, 2002, 2005, and 2008.
 
-png('plot1.png')
+png("plot1.png", width=480,height=480,units="px",bg="transparent")
 
 barplot(height=aggTotalEmissions$Emissions, 
         names.arg=aggTotalEmissions$year, 
         xlab="years", 
         ylab=expression('total PM'[2.5]*' emission'),
-        main=expression('Total PM'[2.5]*' emissions at various years'))
-
-dev.off()
+        main=expression('Total PM'[2.5]*' emissions at various years')
+        )
