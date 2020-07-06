@@ -171,4 +171,4 @@ print(ggp)
 dev.off()
 
 ```
-![Plot6.png]()
+![Plot6.png](https://github.com/VigneshIyer11888/Exploratory-Data-Analysis-Week-4---Project/blob/master/plot6.png)
