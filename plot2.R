@@ -1,10 +1,6 @@
 # Reading the file data
-NEI <- readRDS("./Data for Peer Assessment/summarySCC_PM25.rds")
-SCC <- readRDS("./Data for Peer Assessment/Source_Classification_Code.rds")
-
-# Since my project files are in a different location need to set the
-# working directory
-setwd("C:/Users/DELL/OneDrive/Desktop/Coursera Folder/Exploratory Data Analysis Week 4 - Project")
+NEI <- readRDS("../Data for Peer Assessment/summarySCC_PM25.rds")
+SCC <- readRDS("../Data for Peer Assessment/Source_Classification_Code.rds")
 
 # Subset NEI data by Baltimore's fip.
 subsetBaltimoreNEI <- NEI[NEI$fips=="24510",]
