@@ -36,3 +36,14 @@ NEI <- readRDS("./Data for Peer Assessment/summarySCC_PM25.rds")
 SCC <- readRDS("./Data for Peer Assessment/Source_Classification_Code.rds")
 
 ```
+The first few rows of the command are as follows:
+```
+# fips      SCC Pollutant Emissions  type year
+# 4  09001 10100401  PM25-PRI    15.714 POINT 1999
+# 8  09001 10100404  PM25-PRI   234.178 POINT 1999
+# 12 09001 10100501  PM25-PRI     0.128 POINT 1999
+# 16 09001 10200401  PM25-PRI     2.036 POINT 1999
+# 20 09001 10200504  PM25-PRI     0.388 POINT 1999
+# 24 09001 10200602  PM25-PRI     1.490 POINT 1999
+
+```
